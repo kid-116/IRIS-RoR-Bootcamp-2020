@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  load_and_authorize_resource
   before_action :set_user, only: %w[ show edit update destroy ]
 
   # GET /users
@@ -56,6 +57,11 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
+      begin
+        User.find(session[:user_id])
+      rescue
+        session[:user_id] = nil
+      end
       format.html { redirect_to users_url, notice: "User was successfully destroyed." }
       format.json { head :no_content }
     end
@@ -69,6 +75,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :admin)
     end
 end
