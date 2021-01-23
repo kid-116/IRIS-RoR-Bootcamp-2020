@@ -26,6 +26,11 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    if @user.admin
+      @user.private_articles_remaining = -1
+    else
+      @user.private_articles_remaining = 5
+    end
 
     respond_to do |format|
       if @user.save

@@ -17,7 +17,9 @@ class Ability
     # Additional permissions for logged in users
     if user.present?
       # Can read private articles
-      can :show, Article, public: false
+      if user.private_articles_remaining != 0
+        can :show, Article, public: false
+      end
       
       # Can create articles
       can :new, Article

@@ -11,6 +11,11 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    if (not @article.public) && (@article.user_id != session[:user_id])
+      user = User.find_by(id: session[:user_id])
+      user.private_articles_remaining -= 1
+      user.save
+    end
   end
 
   # GET /articles/new
