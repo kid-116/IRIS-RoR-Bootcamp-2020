@@ -1,0 +1,28 @@
+<br>
+<% unless notice.to_s.empty? %>
+  <div class="alert alert-success" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
+<br>
+<font color="#3385ff" face="WildWest">
+  <h1 class="text-center">BlogSpot</h1>
+</font>
+<font color="	#808080">
+  <h5 class="text-center">Blog to Inspire</h5>
+</font>
+<hr>
+<font face="WildWest">
+  <h2 class="text-center">Articles</h1>
+</font>
+<hr>
+<br>
+<div class="row">
+  <% @articles.each do |article| %>
+    <div class="col-md-3.5">
+      <div class="col-sm-1">
+        <%= render partial: 'card', locals: {article: article} %> 
+      </div>
+    </div>
+  <% end %>
+</div>

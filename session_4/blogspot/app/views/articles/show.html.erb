@@ -1,0 +1,27 @@
+<br>
+<% unless notice.to_s.empty? %>
+  <div class="alert alert-success" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
+
+<img src="<%= @article.image_url %>" alt="Invalid URL!" width=1100 height=700>
+
+<p>
+  <h1> <%= @article.title %> </h1>
+</p>
+
+<p>
+  <font color="#808080">
+    <h3> <%= @article.topic %> <h3>
+  </font>
+</p>
+
+<hr>
+
+<p>
+  <%= @article.content %>
+</p>
+<br>
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>

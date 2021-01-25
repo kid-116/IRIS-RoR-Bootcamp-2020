@@ -1,0 +1,27 @@
+<br>
+<% unless notice.to_s.empty? %>
+  <div class="alert alert-success" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
+<br>
+<p>
+  <font color="#3385ff">
+  <strong>NAME</strong>
+  </font>
+  <h1><%= @user.name %></h1>
+</p>
+
+<p>
+  <font color="#3385ff">
+  <strong>EMAIL</strong>
+  </font>
+  <h2><%= @user.email %></h2>
+</p>
+<hr>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<% if current_user.admin %>
+  <%= link_to 'Back', "/users" %>
+<% else %>
+  <%= link_to 'Back', "/" %>
+<% end %>

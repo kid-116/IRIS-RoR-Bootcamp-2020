@@ -1,0 +1,48 @@
+<head>
+<style>
+table,
+table td {
+  border: 0px solid #cccccc;
+}
+td {
+  height: 80px;
+  width: 160px;
+  vertical-align: middle;
+}
+</style>
+</head>
+<br>
+<% unless notice.to_s.empty? %>
+  <div class="alert alert-danger" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
+<br>
+<font color="#808080">
+  <h1>BlogSpot Bloggers</h1>
+</font>
+<hr>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

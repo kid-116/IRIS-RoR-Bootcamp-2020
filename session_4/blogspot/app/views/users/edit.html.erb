@@ -1,0 +1,16 @@
+<br>
+<font color="#3385ff">
+    <h1>Editing User</h1>
+</font>
+<hr>
+<br>
+<%= render 'form', user: @user %>
+<br>
+<br>
+<br>
+<%= link_to 'Back', @user %>
+<br>
+<hr>
+<button type="button" class="btn btn-outline-danger">
+    <%= link_to 'Delete Account', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+</button>

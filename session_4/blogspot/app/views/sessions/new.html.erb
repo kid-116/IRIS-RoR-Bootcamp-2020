@@ -1,0 +1,35 @@
+<br>
+<% unless notice.to_s.empty? %>
+  <div class="alert alert-success" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
+<% unless alert.to_s.empty? %>
+  <div class="alert alert-danger" role="alert">
+    <%= alert %>
+  </div>
+<% end %>
+<br>
+<font color="#808080">
+  <h1>Login</h1>
+</font>
+<hr>
+<%= form_with url: sessions_path do |f| %>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="actions">
+     <%= f.submit 'Login' %>
+  </div>
+<% end %>
+<br>
+<br>
+<br>
+<%= link_to 'Back', '/' %>
