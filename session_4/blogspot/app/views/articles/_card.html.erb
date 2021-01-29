@@ -1,5 +1,5 @@
 <div class="card mb-2" style="Width: 15.9rem;">
-    <img class="card-img-top" src="<%= article.image_url %>" alt="Invalid URL!">
+    <%= image_tag article.image_url, alt: article.title, class: 'card-img-top' %>
     <div class="card-body">
     
       <h3 class="card-title">

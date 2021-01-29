@@ -9,6 +9,6 @@
 <br>
 <%= link_to 'Back', @article %> 
 <hr>
-<button type="button" class="btn btn-outline-danger">
-    <%= link_to 'Delete Article', @article, method: :delete, data: { confirm: 'Are you sure?' } %>
-</button>
+<% if can? :destroy, @article %>
+    <%= link_to 'Delete Article', @article, method: :delete, class: 'btn btn-outline-danger', data: {confirm: 'Are you sure?'} %>
+<% end %>
