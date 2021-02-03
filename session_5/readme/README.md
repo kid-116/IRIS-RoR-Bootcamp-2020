@@ -1,5 +1,5 @@
 SCHEMA
-
+'''ruby
 ActiveRecord::Schema.define(version: 2021_01_30_150003) do
 
   create_table "assignments", force: :cascade do |t|
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2021_01_30_150003) do
   end
 
 end
-
+'''
 VALIDATIONS & ASSOCIATIONS
 
 class Branch < ApplicationRecord
