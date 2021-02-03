@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2021_01_30_150003) do
 end
 ```
 VALIDATIONS & ASSOCIATIONS
-
+```ruby
 class Branch < ApplicationRecord
     has_many :courses
     has_many :students
@@ -66,7 +66,8 @@ class Branch < ApplicationRecord
     
     validates :code, presence: true, uniqueness: true
 end
-
+```
+```ruby
 class Course < ApplicationRecord
     belongs_to :branch
     has_many :students
@@ -103,7 +104,8 @@ def check_code
         end
     end
 end
-
+```
+```ruby
 class Assignment < ApplicationRecord
     belongs_to :course
 
@@ -125,7 +127,8 @@ def check_deadline
         errors.add(:deadline, "Invalid")
     end
 end
-
+```
+```ruby
 class Student < ApplicationRecord
     belongs_to :branch
     has_many :courses
@@ -153,4 +156,4 @@ def check_roll
         errors.add(:roll_no, "Invalid")
     end
 end
-
+```
