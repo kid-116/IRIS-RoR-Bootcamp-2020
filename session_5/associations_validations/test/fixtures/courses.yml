@@ -2,7 +2,6 @@
 
 one:
   id: 11
-  branch_id: 1
   name: AI
   code: CSE143
   year: 3
@@ -10,7 +9,6 @@ one:
 
 two:
   id: 12
-  branch_id: 1
   name: ML
   code: CSE153
   year: 2
@@ -18,7 +16,6 @@ two:
 
 three:
   id: 21
-  branch_id: 2
   name: ICE
   code: MCE121
   year: 2
@@ -26,7 +23,6 @@ three:
 
 four:
   id: 22
-  branch_id: 2
   name: Aerodynamics
   code: MCE143
   year: 3
@@ -34,7 +30,6 @@ four:
 
 five:
   id: 31
-  branch_id: 3
   name: Ores
   code: MNE121
   year: 1
@@ -42,7 +37,6 @@ five:
 
 six:
   id: 32
-  branch_id: 3
   name: Basics of Inorganic Chemistry
   code: MNE143
   year: 1
@@ -50,7 +44,6 @@ six:
 
 seven:
   id: 41
-  branch_id: 4
   name: Semiconductors
   code: ECE143
   year: 3
@@ -58,7 +51,6 @@ seven:
 
 eight:
   id: 42
-  branch_id: 4
   name: Networks
   code: ECE122
   year: 2

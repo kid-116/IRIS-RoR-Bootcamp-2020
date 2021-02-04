@@ -1,6 +1,7 @@
 class Course < ApplicationRecord
     belongs_to :branch
-    has_many :students
+    #TODO
+    has_and_belongs_to_many :students
     has_many :assignments
 
     validates_associated :branch

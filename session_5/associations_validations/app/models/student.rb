@@ -1,6 +1,8 @@
 class Student < ApplicationRecord
     belongs_to :branch
-    has_many :courses
+    has_and_belongs_to_many :courses
+    #To track submissions
+    has_and_belongs_to_many :assignments
 
     validates_associated :branch
     

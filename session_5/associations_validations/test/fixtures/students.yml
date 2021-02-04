@@ -2,7 +2,6 @@
 
 one:
   id: 1
-  branch_id: 1
   name: Mehul
   admission_year: 2021
   email: mehultodi116@gmail.com

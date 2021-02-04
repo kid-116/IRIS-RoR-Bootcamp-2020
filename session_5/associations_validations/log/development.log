@@ -4012,3 +4012,524 @@ INSERT INTO "courses" ("id", "name", "code", "year", "credits", "created_at", "u
   [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]
   [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 111], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "assignments"[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "weightage" decimal, "deadline" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "branches"[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "branches" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "code" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "courses"[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "courses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "code" varchar, "year" integer, "credits" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "admission_year" integer, "email" varchar, "roll_no" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210130150003)[0m
+  [1m[35m (6.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210129172315),
+(20210129172508),
+(20210129172643),
+(20210129172723);
+
+[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-04 06:19:41.681428"], ["updated_at", "2021-02-04 06:19:41.681428"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "6dd4f13334bb41f94543c358218e70d8c687a89f"], ["created_at", "2021-02-04 06:19:41.705212"], ["updated_at", "2021-02-04 06:19:41.705212"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "assignments"[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "weightage" decimal, "deadline" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "branches"[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "branches" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "code" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "courses"[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "courses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "code" varchar, "year" integer, "credits" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "admission_year" integer, "email" varchar, "roll_no" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210130150003)[0m
+  [1m[35m (3.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210129172315),
+(20210129172508),
+(20210129172643),
+(20210129172723);
+
+[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-04 06:19:41.804760"], ["updated_at", "2021-02-04 06:19:41.804760"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.9ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2021-02-04 06:19:41.814963"], ["key", "environment"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "6dd4f13334bb41f94543c358218e70d8c687a89f"], ["created_at", "2021-02-04 06:19:41.823188"], ["updated_at", "2021-02-04 06:19:41.823188"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (2.6ms)[0m  [1m[31mDELETE FROM "branches";
+DELETE FROM "assignments";
+DELETE FROM "students";
+DELETE FROM "courses";
+INSERT INTO "branches" ("id", "name", "code", "created_at", "updated_at") VALUES (1, 'Computer Science and Engineering', 'CSE', '2021-02-04 06:21:02.429691', '2021-02-04 06:21:02.429691');
+INSERT INTO "branches" ("id", "name", "code", "created_at", "updated_at") VALUES (2, 'Mechanical Engineering', 'MCE', '2021-02-04 06:21:02.429691', '2021-02-04 06:21:02.429691');
+INSERT INTO "branches" ("id", "name", "code", "created_at", "updated_at") VALUES (3, 'Mining Engineering', 'MNE', '2021-02-04 06:21:02.429691', '2021-02-04 06:21:02.429691');
+INSERT INTO "branches" ("id", "name", "code", "created_at", "updated_at") VALUES (4, 'Electronics and Communication Engineering', 'ECE', '2021-02-04 06:21:02.429691', '2021-02-04 06:21:02.429691');
+INSERT INTO "assignments" ("id", "name", "weightage", "deadline", "created_at", "updated_at") VALUES (111, 'Sample Problems', 10.0, '2021-03-10 16:00:00', '2021-02-04 06:21:02.431154', '2021-02-04 06:21:02.431154');
+INSERT INTO "assignments" ("id", "name", "weightage", "deadline", "created_at", "updated_at") VALUES (121, 'Sample Problems', 10.0, '2021-03-10 16:00:00', '2021-02-04 06:21:02.431154', '2021-02-04 06:21:02.431154');
+INSERT INTO "assignments" ("id", "name", "weightage", "deadline", "created_at", "updated_at") VALUES (211, 'Sample Problems', 10.0, '2021-03-10 16:00:00', '2021-02-04 06:21:02.431154', '2021-02-04 06:21:02.431154');
+INSERT INTO "assignments" ("id", "name", "weightage", "deadline", "created_at", "updated_at") VALUES (221, 'Sample Problems', 10.0, '2021-03-10 16:00:00', '2021-02-04 06:21:02.431154', '2021-02-04 06:21:02.431154');
+INSERT INTO "assignments" ("id", "name", "weightage", "deadline", "created_at", "updated_at") VALUES (311, 'Sample Problems', 10.0, '2021-03-10 16:00:00', '2021-02-04 06:21:02.431154', '2021-02-04 06:21:02.431154');
+INSERT INTO "assignments" ("id", "name", "weightage", "deadline", "created_at", "updated_at") VALUES (321, 'Sample Problems', 10.0, '2021-03-10 16:00:00', '2021-02-04 06:21:02.431154', '2021-02-04 06:21:02.431154');
+INSERT INTO "assignments" ("id", "name", "weightage", "deadline", "created_at", "updated_at") VALUES (411, 'Sample Problems', 10.0, '2021-03-10 16:00:00', '2021-02-04 06:21:02.431154', '2021-02-04 06:21:02.431154');
+INSERT INTO "assignments" ("id", "name", "weightage", "deadline", "created_at", "updated_at") VALUES (421, 'Sample Problems', 10.0, '2021-03-10 16:00:00', '2021-02-04 06:21:02.431154', '2021-02-04 06:21:02.431154');
+INSERT INTO "students" ("id", "name", "admission_year", "email", "roll_no", "created_at", "updated_at") VALUES (1, 'Mehul', 2021, 'mehultodi116@gmail.com', '21CSE111', '2021-02-04 06:21:02.431875', '2021-02-04 06:21:02.431875');
+INSERT INTO "courses" ("id", "name", "code", "year", "credits", "created_at", "updated_at") VALUES (11, 'AI', 'CSE143', 3, 5, '2021-02-04 06:21:02.432541', '2021-02-04 06:21:02.432541');
+INSERT INTO "courses" ("id", "name", "code", "year", "credits", "created_at", "updated_at") VALUES (12, 'ML', 'CSE153', 2, 4, '2021-02-04 06:21:02.432541', '2021-02-04 06:21:02.432541');
+INSERT INTO "courses" ("id", "name", "code", "year", "credits", "created_at", "updated_at") VALUES (21, 'ICE', 'MCE121', 2, 3, '2021-02-04 06:21:02.432541', '2021-02-04 06:21:02.432541');
+INSERT INTO "courses" ("id", "name", "code", "year", "credits", "created_at", "updated_at") VALUES (22, 'Aerodynamics', 'MCE143', 3, 4, '2021-02-04 06:21:02.432541', '2021-02-04 06:21:02.432541');
+INSERT INTO "courses" ("id", "name", "code", "year", "credits", "created_at", "updated_at") VALUES (31, 'Ores', 'MNE121', 1, 3, '2021-02-04 06:21:02.432541', '2021-02-04 06:21:02.432541');
+INSERT INTO "courses" ("id", "name", "code", "year", "credits", "created_at", "updated_at") VALUES (32, 'Basics of Inorganic Chemistry', 'MNE143', 1, 2, '2021-02-04 06:21:02.432541', '2021-02-04 06:21:02.432541');
+INSERT INTO "courses" ("id", "name", "code", "year", "credits", "created_at", "updated_at") VALUES (41, 'Semiconductors', 'ECE143', 3, 5, '2021-02-04 06:21:02.432541', '2021-02-04 06:21:02.432541');
+INSERT INTO "courses" ("id", "name", "code", "year", "credits", "created_at", "updated_at") VALUES (42, 'Networks', 'ECE122', 2, 5, '2021-02-04 06:21:02.432541', '2021-02-04 06:21:02.432541')[0m
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mBranch Load (0.2ms)[0m  [1m[34mSELECT "branches".* FROM "branches" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mAssignment Load (0.3ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.3ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]
+  [1m[36mBranch Load (0.1ms)[0m  [1m[34mSELECT "branches".* FROM "branches" WHERE "branches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."branch_id" = ? /* loading for inspect */ LIMIT ?[0m  [["branch_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "assignments"[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "weightage" decimal, "deadline" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "branches"[0m
+  [1m[35m (20.9ms)[0m  [1m[35mCREATE TABLE "branches" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "code" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "courses"[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "courses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "code" varchar, "year" integer, "credits" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "admission_year" integer, "email" varchar, "roll_no" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (9.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210130150003)[0m
+  [1m[35m (5.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210129172315),
+(20210129172508),
+(20210129172643),
+(20210129172723);
+
+[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (6.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-04 06:29:40.683457"], ["updated_at", "2021-02-04 06:29:40.683457"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "6dd4f13334bb41f94543c358218e70d8c687a89f"], ["created_at", "2021-02-04 06:29:40.711663"], ["updated_at", "2021-02-04 06:29:40.711663"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "assignments"[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "weightage" decimal, "deadline" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "branches"[0m
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE "branches" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "code" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "courses"[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "courses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "code" varchar, "year" integer, "credits" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "admission_year" integer, "email" varchar, "roll_no" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210130150003)[0m
+  [1m[35m (4.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210129172315),
+(20210129172508),
+(20210129172643),
+(20210129172723);
+
+[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-04 06:29:40.875607"], ["updated_at", "2021-02-04 06:29:40.875607"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (2.8ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2021-02-04 06:29:40.889892"], ["key", "environment"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "6dd4f13334bb41f94543c358218e70d8c687a89f"], ["created_at", "2021-02-04 06:29:40.902605"], ["updated_at", "2021-02-04 06:29:40.902605"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBranch Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "branches" WHERE "branches"."code" = ? LIMIT ?[0m  [["code", "CSE"], ["LIMIT", 1]]
+  [1m[36mBranch Create (6.5ms)[0m  [1m[32mINSERT INTO "branches" ("id", "name", "code", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 1], ["name", "Computer Science and Engineering"], ["code", "CSE"], ["created_at", "2021-02-04 06:30:52.618479"], ["updated_at", "2021-02-04 06:30:52.618479"]]
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBranch Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "branches" WHERE "branches"."code" = ? LIMIT ?[0m  [["code", "MCE"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBranch Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "branches" WHERE "branches"."code" = ? LIMIT ?[0m  [["code", "MCE"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBranch Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "branches" WHERE "branches"."code" = ? LIMIT ?[0m  [["code", "MCE"], ["LIMIT", 1]]
+  [1m[36mBranch Create (5.4ms)[0m  [1m[32mINSERT INTO "branches" ("id", "name", "code", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 2], ["name", "Mechanical Engineering"], ["code", "MCE"], ["created_at", "2021-02-04 06:31:35.694249"], ["updated_at", "2021-02-04 06:31:35.694249"]]
+  [1m[36mTRANSACTION (11.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCourse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."code" = ? LIMIT ?[0m  [["code", "CSE111"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCourse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."code" = ? LIMIT ?[0m  [["code", "CSE111"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mBranch Load (0.2ms)[0m  [1m[34mSELECT "branches".* FROM "branches" WHERE "branches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mBranch Load (0.1ms)[0m  [1m[34mSELECT "branches".* FROM "branches" WHERE "branches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddBranchToCourses (20210204064724)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "courses" ADD "branch_id" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210204064724"]]
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mBranch Load (0.1ms)[0m  [1m[34mSELECT "branches".* FROM "branches" WHERE "branches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBranch Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "branches" WHERE "branches"."code" = ? AND "branches"."id" != ? LIMIT ?[0m  [["code", "CSE"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."code" = ? LIMIT ?[0m  [["code", "CSE111"], ["LIMIT", 1]]
+  [1m[36mCourse Create (11.4ms)[0m  [1m[32mINSERT INTO "courses" ("id", "name", "code", "year", "credits", "created_at", "updated_at", "branch_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 11], ["name", "AI"], ["code", "CSE111"], ["year", 3], ["credits", 5], ["created_at", "2021-02-04 06:48:12.106519"], ["updated_at", "2021-02-04 06:48:12.106519"], ["branch_id", 1]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBranch Load (0.1ms)[0m  [1m[34mSELECT "branches".* FROM "branches" WHERE "branches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBranch Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "branches" WHERE "branches"."code" = ? AND "branches"."id" != ? LIMIT ?[0m  [["code", "CSE"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."code" = ? LIMIT ?[0m  [["code", "CS111"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mBranch Load (0.1ms)[0m  [1m[34mSELECT "branches".* FROM "branches" WHERE "branches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBranch Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "branches" WHERE "branches"."code" = ? AND "branches"."id" != ? LIMIT ?[0m  [["code", "CSE"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."code" = ? LIMIT ?[0m  [["code", "CSE111"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mBranch Load (0.1ms)[0m  [1m[34mSELECT "branches".* FROM "branches" WHERE "branches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBranch Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "branches" WHERE "branches"."code" = ? AND "branches"."id" != ? LIMIT ?[0m  [["code", "CSE"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."code" = ? LIMIT ?[0m  [["code", "CSE112"], ["LIMIT", 1]]
+  [1m[36mCourse Create (14.2ms)[0m  [1m[32mINSERT INTO "courses" ("id", "name", "code", "year", "credits", "created_at", "updated_at", "branch_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 12], ["name", "ML"], ["code", "CSE112"], ["year", 3], ["credits", 5], ["created_at", "2021-02-04 06:48:34.819970"], ["updated_at", "2021-02-04 06:48:34.819970"], ["branch_id", 1]]
+  [1m[36mTRANSACTION (9.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBranch Load (0.1ms)[0m  [1m[34mSELECT "branches".* FROM "branches" WHERE "branches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."branch_id" = ? /* loading for inspect */ LIMIT ?[0m  [["branch_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddCourseToAssignments (20210204065039)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "assignments" ADD "course_id" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (10.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210204065039"]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddBranchToSudents (20210204065211)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "sudents" ADD "branch_id" integer[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddBranchToSudents (20210204065211)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "sudents" ADD "branch_id" integer[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddBranchToStudents (20210204065231)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "students" ADD "branch_id" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (11.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210204065231"]]
+  [1m[36mTRANSACTION (14.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mBranch Load (0.1ms)[0m  [1m[34mSELECT "branches".* FROM "branches" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mBranch Load (0.1ms)[0m  [1m[34mSELECT "branches".* FROM "branches" WHERE "branches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBranch Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "branches" WHERE "branches"."code" = ? AND "branches"."id" != ? LIMIT ?[0m  [["code", "CSE"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."code" = ? AND "courses"."id" != ? LIMIT ?[0m  [["code", "CSE111"], ["id", 11], ["LIMIT", 1]]
+  [1m[36mAssignment Create (5.5ms)[0m  [1m[32mINSERT INTO "assignments" ("id", "name", "weightage", "deadline", "created_at", "updated_at", "course_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 111], ["name", "Sample Problems"], ["weightage", 0.0], ["deadline", "2021-03-10 16:00:00"], ["created_at", "2021-02-04 06:57:23.346756"], ["updated_at", "2021-02-04 06:57:23.346756"], ["course_id", 11]]
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBranch Load (0.1ms)[0m  [1m[34mSELECT "branches".* FROM "branches" WHERE "branches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBranch Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "branches" WHERE "branches"."code" = ? AND "branches"."id" != ? LIMIT ?[0m  [["code", "CSE"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."roll_no" = ? LIMIT ?[0m  [["roll_no", "232r"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBranch Load (0.1ms)[0m  [1m[34mSELECT "branches".* FROM "branches" WHERE "branches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBranch Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "branches" WHERE "branches"."code" = ? AND "branches"."id" != ? LIMIT ?[0m  [["code", "CSE"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."roll_no" = ? LIMIT ?[0m  [["roll_no", "21CSE11"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBranch Load (0.1ms)[0m  [1m[34mSELECT "branches".* FROM "branches" WHERE "branches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBranch Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "branches" WHERE "branches"."code" = ? AND "branches"."id" != ? LIMIT ?[0m  [["code", "CSE"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."roll_no" = ? LIMIT ?[0m  [["roll_no", "20CSE001"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBranch Load (0.1ms)[0m  [1m[34mSELECT "branches".* FROM "branches" WHERE "branches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBranch Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "branches" WHERE "branches"."code" = ? AND "branches"."id" != ? LIMIT ?[0m  [["code", "CSE"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."roll_no" = ? LIMIT ?[0m  [["roll_no", "21CSE001"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBranch Load (0.1ms)[0m  [1m[34mSELECT "branches".* FROM "branches" WHERE "branches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBranch Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "branches" WHERE "branches"."code" = ? AND "branches"."id" != ? LIMIT ?[0m  [["code", "CSE"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."roll_no" = ? LIMIT ?[0m  [["roll_no", "21CSE001"], ["LIMIT", 1]]
+  [1m[36mStudent Create (4.9ms)[0m  [1m[32mINSERT INTO "students" ("id", "name", "admission_year", "email", "roll_no", "created_at", "updated_at", "branch_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["name", "Mehul"], ["admission_year", 2021], ["email", "mehultodi116@gmail.com"], ["roll_no", "21CSE001"], ["created_at", "2021-02-04 06:59:23.853286"], ["updated_at", "2021-02-04 06:59:23.853286"], ["branch_id", 1]]
+  [1m[36mTRANSACTION (12.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateJoinTableCourseStudent (20210204071207)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "courses_students" ("course_id" integer NOT NULL, "student_id" integer NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (6.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210204071207"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent::HABTM_Courses Create (10.4ms)[0m  [1m[32mINSERT INTO "courses_students" ("course_id", "student_id") VALUES (?, ?)[0m  [["course_id", 11], ["student_id", 1]]
+  [1m[36mStudent::HABTM_Courses Create (0.1ms)[0m  [1m[32mINSERT INTO "courses_students" ("course_id", "student_id") VALUES (?, ?)[0m  [["course_id", 12], ["student_id", 1]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? AND "courses"."id" = ? LIMIT ?[0m  [["student_id", 1], ["id", 11], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? AND "courses"."id" = ? LIMIT ?[0m  [["student_id", 1], ["id", 11], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? AND "courses"."id" = ? LIMIT ?[0m  [["student_id", 1], ["id", 11], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."course_id" = ? /* loading for inspect */ LIMIT ?[0m  [["course_id", 11], ["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" INNER JOIN "courses" ON "assignments"."course_id" = "courses"."id" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? AND "courses"."id" = ? LIMIT ?[0m  [["student_id", 1], ["id", 11], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."course_id" = ? AND "assignments"."id" = ? LIMIT ?[0m  [["course_id", 11], ["id", 111], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? AND "courses"."id" = ? LIMIT ?[0m  [["student_id", 1], ["id", 11], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."course_id" = ? AND "assignments"."id" = ? LIMIT ?[0m  [["course_id", 11], ["id", 111], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? AND "courses"."id" = ? LIMIT ?[0m  [["student_id", 1], ["id", 11], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."course_id" = ? AND "assignments"."id" = ? LIMIT ?[0m  [["course_id", 11], ["id", 111], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" ORDER BY "students"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ?[0m  [["student_id", 1]]
+  [1m[36mStudent::HABTM_Courses Destroy (18.2ms)[0m  [1m[31mDELETE FROM "courses_students" WHERE "courses_students"."student_id" = ? AND "courses_students"."course_id" IN (?, ?)[0m  [["student_id", 1], [nil, 11], [nil, 12]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."name" = ? LIMIT ?[0m  [["name", "Mehul"], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."code" = ? LIMIT ?[0m  [["code", "12"], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."name" = ? LIMIT ?[0m  [["name", "Mehu"], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."name" = ? LIMIT ?[0m  [["name", "Mehu"], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."name" = ? LIMIT ?[0m  [["name", "Mehul"], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."code" = ? LIMIT ?[0m  [["code", "11"], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."name" = ? LIMIT ?[0m  [["name", "Mehul"], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."code" = ? LIMIT ?[0m  [["code", "11"], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent::HABTM_Courses Create (7.6ms)[0m  [1m[32mINSERT INTO "courses_students" ("course_id", "student_id") VALUES (?, ?)[0m  [["course_id", 11], ["student_id", 1]]
+  [1m[36mStudent::HABTM_Courses Create (0.1ms)[0m  [1m[32mINSERT INTO "courses_students" ("course_id", "student_id") VALUES (?, ?)[0m  [["course_id", 12], ["student_id", 1]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" INNER JOIN "courses" ON "assignments"."course_id" = "courses"."id" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ?[0m  [["student_id", 1]]
+  [1m[36mStudent::HABTM_Courses Destroy (12.8ms)[0m  [1m[31mDELETE FROM "courses_students" WHERE "courses_students"."student_id" = ? AND "courses_students"."course_id" IN (?, ?)[0m  [["student_id", 1], [nil, 11], [nil, 12]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."name" = ? LIMIT ?[0m  [["name", "Mehul"], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."code" = ? LIMIT ?[0m  [["code", "CSE111"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent::HABTM_Courses Create (3.9ms)[0m  [1m[32mINSERT INTO "courses_students" ("course_id", "student_id") VALUES (?, ?)[0m  [["course_id", 11], ["student_id", 1]]
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? AND "courses"."id" = ? LIMIT ?[0m  [["student_id", 1], ["id", 11], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? AND "courses"."id" = ? LIMIT ?[0m  [["student_id", 1], ["id", 11], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."course_id" = ? /* loading for inspect */ LIMIT ?[0m  [["course_id", 11], ["LIMIT", 11]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.5ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "courses_students" ON "students"."id" = "courses_students"."student_id" WHERE "courses_students"."course_id" = ? /* loading for inspect */ LIMIT ?[0m  [["course_id", 11], ["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateJoinTableSubmissions (20210204075053)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "assignmnets_students" ("student_id" integer NOT NULL, "assignmnet_id" integer NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (11.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210204075053"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateJoinTableSubmissions (20210204075053)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.9ms)[0m  [1m[35mDROP TABLE "assignmnets_students"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (7.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20210204075053"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateJoinTableSubmissions (20210204075053)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateJoinTableStudentAssignment (20210204075347)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "assignmnets_students" ("student_id" integer NOT NULL, "assignmnet_id" integer NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (16.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210204075347"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateJoinTableStudentAssignment (20210204075347)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.7ms)[0m  [1m[35mDROP TABLE "assignmnets_students"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (7.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20210204075347"]]
+  [1m[36mTRANSACTION (9.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateJoinTableStudentAssignment (20210204075444)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "assignments_students" ("student_id" integer NOT NULL, "assignment_id" integer NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (4.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210204075444"]]
+  [1m[36mTRANSACTION (9.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" INNER JOIN "assignments_students" ON "assignments"."id" = "assignments_students"."assignment_id" WHERE "assignments_students"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? AND "courses"."id" = ? LIMIT ?[0m  [["student_id", 1], ["id", 11], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "courses_students" ON "courses"."id" = "courses_students"."course_id" WHERE "courses_students"."student_id" = ? AND "courses"."id" = ? LIMIT ?[0m  [["student_id", 1], ["id", 11], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."course_id" = ? /* loading for inspect */ LIMIT ?[0m  [["course_id", 11], ["LIMIT", 11]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" INNER JOIN "assignments_students" ON "assignments"."id" = "assignments_students"."assignment_id" WHERE "assignments_students"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 111], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "assignments_students" ON "students"."id" = "assignments_students"."student_id" WHERE "assignments_students"."assignment_id" = ? /* loading for inspect */ LIMIT ?[0m  [["assignment_id", 111], ["LIMIT", 11]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 111], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."roll_no" = ? LIMIT ?[0m  [["roll_no", "21CSE001"], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.0ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 111], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent::HABTM_Assignments Create (3.2ms)[0m  [1m[32mINSERT INTO "assignments_students" ("student_id", "assignment_id") VALUES (?, ?)[0m  [["student_id", 1], ["assignment_id", 111]]
+  [1m[36mTRANSACTION (10.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" INNER JOIN "assignments_students" ON "assignments"."id" = "assignments_students"."assignment_id" WHERE "assignments_students"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" INNER JOIN "assignments_students" ON "assignments"."id" = "assignments_students"."assignment_id" WHERE "assignments_students"."student_id" = ? /* loading for inspect */ LIMIT ?[0m  [["student_id", 1], ["LIMIT", 11]]

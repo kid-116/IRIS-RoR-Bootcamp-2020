@@ -1,5 +1,7 @@
 class Assignment < ApplicationRecord
     belongs_to :course
+    #To track submissions
+    has_and_belongs_to_many :students
 
     validates_associated :course
 
@@ -18,3 +20,5 @@ def deadline_must_be_in_future
         errors.add(:deadline, "Deadline has already passed")
     end
 end
+
+

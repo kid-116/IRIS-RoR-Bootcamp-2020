@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_30_150003) do
+ActiveRecord::Schema.define(version: 2021_02_04_075444) do
 
   create_table "assignments", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,13 @@ ActiveRecord::Schema.define(version: 2021_01_30_150003) do
     t.datetime "deadline"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "course_id"
+  end
+
+  #To track submissions
+  create_table "assignments_students", id: false, force: :cascade do |t| 
+    t.integer "student_id", null: false
+    t.integer "assignment_id", null: false
   end
 
   create_table "branches", force: :cascade do |t|
@@ -34,6 +41,12 @@ ActiveRecord::Schema.define(version: 2021_01_30_150003) do
     t.integer "credits"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "branch_id"
+  end
+
+  create_table "courses_students", id: false, force: :cascade do |t|
+    t.integer "course_id", null: false
+    t.integer "student_id", null: false
   end
 
   create_table "students", force: :cascade do |t|
@@ -43,6 +56,7 @@ ActiveRecord::Schema.define(version: 2021_01_30_150003) do
     t.string "roll_no"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "branch_id"
   end
 
 end
