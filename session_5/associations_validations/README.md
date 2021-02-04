@@ -1,6 +1,6 @@
 SCHEMA
 ```ruby
-ActiveRecord::Schema.define(version: 2021_01_30_150003) do
+ActiveRecord::Schema.define(version: 2021_02_04_075444) do
 
   create_table "assignments", force: :cascade do |t|
     t.string "name"
@@ -8,6 +8,13 @@ ActiveRecord::Schema.define(version: 2021_01_30_150003) do
     t.datetime "deadline"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "course_id"
+  end
+
+  #To track submissions
+  create_table "assignments_students", id: false, force: :cascade do |t| 
+    t.integer "student_id", null: false
+    t.integer "assignment_id", null: false
   end
 
   create_table "branches", force: :cascade do |t|
@@ -24,6 +31,12 @@ ActiveRecord::Schema.define(version: 2021_01_30_150003) do
     t.integer "credits"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "branch_id"
+  end
+
+  create_table "courses_students", id: false, force: :cascade do |t|
+    t.integer "course_id", null: false
+    t.integer "student_id", null: false
   end
 
   create_table "students", force: :cascade do |t|
@@ -33,6 +46,7 @@ ActiveRecord::Schema.define(version: 2021_01_30_150003) do
     t.string "roll_no"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "branch_id"
   end
 
 end
@@ -54,7 +68,7 @@ end
 ```ruby
 class Course < ApplicationRecord
     belongs_to :branch
-    has_many :students
+    has_and_belongs_to_many :students
     has_many :assignments
 
     validates_associated :branch
@@ -94,6 +108,8 @@ end
 ```ruby
 class Assignment < ApplicationRecord
     belongs_to :course
+    #To track submissions
+    has_and_belongs_to_many :students
 
     validates_associated :course
 
@@ -116,7 +132,9 @@ end
 ```ruby
 class Student < ApplicationRecord
     belongs_to :branch
-    has_many :courses
+    has_and_belongs_to_many :courses
+    #To track submissions
+    has_and_belongs_to_many :assignments
 
     validates_associated :branch
     
@@ -147,6 +165,23 @@ def roll_must_end_with_three_digits
         errors.add(:roll_no, "Invalid serial number length")
     elsif !(roll_no[(2 + branch.code.length)..-1].scan(/\D/).empty?)
         errors.add(:roll_no, "Invalid serial number")
+    end
+end
+```
+HELPERS
+```ruby
+module ApplicationHelper
+    def register(student_roll_no, course_code)
+        Student.find_by(roll_no: student_roll_no).courses<<Course.find_by(code: course_code) 
+    end
+
+    def submit(student_roll_no, assignment_id)
+        if Assignment.find(assignment_id).deadline >= Time.now
+            print("Submission successful")
+            Student.find_by(roll_no: student_roll_no).assignments<<Assignment.find(assignment_id)
+        else
+            print("Submission window has closed")
+        end
     end
 end
 ```
