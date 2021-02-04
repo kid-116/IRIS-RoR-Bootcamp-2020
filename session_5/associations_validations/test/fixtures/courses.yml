@@ -1,0 +1,69 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 11
+  branch_id: 1
+  name: AI
+  code: CSE143
+  year: 3
+  credits: 5
+
+two:
+  id: 12
+  branch_id: 1
+  name: ML
+  code: CSE153
+  year: 2
+  credits: 4  
+
+three:
+  id: 21
+  branch_id: 2
+  name: ICE
+  code: MCE121
+  year: 2
+  credits: 3
+
+four:
+  id: 22
+  branch_id: 2
+  name: Aerodynamics
+  code: MCE143
+  year: 3
+  credits: 4
+
+five:
+  id: 31
+  branch_id: 3
+  name: Ores
+  code: MNE121
+  year: 1
+  credits: 3
+
+six:
+  id: 32
+  branch_id: 3
+  name: Basics of Inorganic Chemistry
+  code: MNE143
+  year: 1
+  credits: 2
+
+seven:
+  id: 41
+  branch_id: 4
+  name: Semiconductors
+  code: ECE143
+  year: 3
+  credits: 5
+
+eight:
+  id: 42
+  branch_id: 4
+  name: Networks
+  code: ECE122
+  year: 2
+  credits: 5
+
+
+
+

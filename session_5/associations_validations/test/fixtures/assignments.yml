@@ -1,0 +1,57 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 111
+  course_id: 11
+  name: Sample Problems
+  weightage: 10
+  deadline: 2021-03-10 16:00:00 +0000
+
+two:
+  id: 121
+  course_id: 12
+  name: Sample Problems
+  weightage: 10
+  deadline: 2021-03-10 16:00:00 +0000
+
+three:
+  id: 211
+  course_id: 21
+  name: Sample Problems
+  weightage: 10
+  deadline: 2021-03-10 16:00:00 +0000
+
+four:
+  id: 221
+  course_id: 22
+  name: Sample Problems
+  weightage: 10
+  deadline: 2021-03-10 16:00:00 +0000
+
+five:
+  id: 311
+  course_id: 31
+  name: Sample Problems
+  weightage: 10
+  deadline: 2021-03-10 16:00:00 +0000
+
+six:
+  id: 321
+  course_id: 32
+  name: Sample Problems
+  weightage: 10
+  deadline: 2021-03-10 16:00:00 +0000
+
+seven:
+  id: 411
+  course_id: 41
+  name: Sample Problems
+  weightage: 10
+  deadline: 2021-03-10 16:00:00 +0000
+
+eight:
+  id: 421
+  course_id: 42
+  name: Sample Problems
+  weightage: 10
+  deadline: 2021-03-10 16:00:00 +0000 

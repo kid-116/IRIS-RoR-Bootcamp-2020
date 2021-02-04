@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  name: Computer Science and Engineering
+  code: CSE
+
+two:
+  id: 2
+  name: Mechanical Engineering
+  code: MCE
+
+three:
+  id: 3
+  name: Mining Engineering
+  code: MNE
+
+four:
+  id: 4
+  name: Electronics and Communication Engineering
+  code: ECE
+
+
